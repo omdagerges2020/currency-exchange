@@ -217,7 +217,7 @@ myConvertBtn.addEventListener("click", () => {
       (data) =>
         (myResult.innerHTML = `${
           myResultInput.value == "" ? 1 : myResultInput.value
-        } ${myFromSelect.value} = ${data.conversion_rates[myToSelect.value]} ${myToSelect.value}`)
+        } ${myFromSelect.value} = ${myResultInput.value == "" ? (1 * data.conversion_rates[myToSelect.value]).toFixed(2) : (myResultInput.value * data.conversion_rates[myToSelect.value]).toFixed(2)} ${myToSelect.value}`)
     );
 });
 
@@ -240,7 +240,7 @@ myRevBtn.addEventListener("click", ()=>{
           (data) =>
             (myResult.innerHTML = `${
               myResultInput.value == "" ? 1 : myResultInput.value
-            } ${myFromSelect.value} = ${data.conversion_rates[myToSelect.value]} ${myToSelect.value}`)
+            } ${myFromSelect.value} = ${myResultInput.value == "" ? (1 * data.conversion_rates[myToSelect.value]).toFixed(2) : (myResultInput.value * data.conversion_rates[myToSelect.value]).toFixed(2)} ${myToSelect.value}`)
         );
 })
 
